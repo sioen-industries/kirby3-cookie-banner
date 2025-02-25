@@ -36,7 +36,7 @@ function clearAllowedFeatures()
 function getCookieModalTranslation($key)
 {
     if (option('languages')) {
-        return t("michnhokn.cookie-banner.$key");
+        return t("cookie-banner.$key");
     }
-    return option("michnhokn.cookie-banner.content.$key");
+    return option("cookie-banner.content.$key");
 }

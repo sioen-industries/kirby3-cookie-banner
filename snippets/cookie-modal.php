@@ -11,7 +11,12 @@ $features = array_merge(option('michnhokn.cookie-banner.features'), $features);
      data-show-on-first="<?= $showOnFirst ? 'true' : 'false' ?>">
     <div class="cookie-modal__content">
         <p class="cookie-modal__title"><?= getCookieModalTranslation('title') ?></p>
-        <p class="cookie-modal__text"><?= kti(getCookieModalTranslation('text')) ?></p>
+        <p class="cookie-modal__text">
+            <?= kti(getCookieModalTranslation('text')) ?>
+            <?php if ($disclaimerPage = $site->cookiePolicy()->toPage()): ?>
+                <a href="<?= $disclaimerPage->url() ?>"><?= t('read-more') ?></a>
+            <?php endif ?>
+        </p>
         <div class="cookie-modal__options">
             <?php snippet('cookie-modal-option', [
                 'disabled' => true,
