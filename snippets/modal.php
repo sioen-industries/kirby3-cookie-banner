@@ -18,14 +18,14 @@ $features = array_merge(option('michnhokn.cookie-banner.features'), $features);
             <?php endif ?>
         </p>
         <div class="cookie-modal__options">
-            <?php snippet('cookie-modal-option', [
+            <?php snippet('cookie-modal/option', [
                 'disabled' => true,
                 'checked' => true,
                 'key' => 'essential',
                 'title' => getCookieModalTranslation('essentialText')
             ]) ?>
             <?php foreach ($features as $key => $title): ?>
-                <?php snippet('cookie-modal-option', [
+                <?php snippet('cookie-modal/option', [
                     'disabled' => false,
                     'key' => $key,
                     'title' => t($title, $title)

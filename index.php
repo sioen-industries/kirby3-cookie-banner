@@ -1,5 +1,7 @@
 <?php
 
+use Kirby\Cms\App;
+
 @include_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/lib/CookieMethods.php';
 
@@ -12,10 +14,10 @@ const DEFAULT_CONTENT = [
     'save' => 'Save settings',
 ];
 
-Kirby::plugin('bvdputte/cookie-banner', [
+App::plugin('bvdputte/cookie-banner', [
     'snippets' => [
-        'cookie-modal' => __DIR__ . '/snippets/cookie-modal.php',
-        'cookie-modal-option' => __DIR__ . '/snippets/cookie-modal-option.php',
+        'cookie-modal/modal' => __DIR__ . '/snippets/modal.php',
+        'cookie-modal/option' => __DIR__ . '/snippets/option.php',
     ],
     'translations' => [
         'en' => [
