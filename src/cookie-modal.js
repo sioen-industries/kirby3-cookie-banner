@@ -154,12 +154,13 @@ var cookiebanner = function() {
     activateScripts() {
       const _this = this;
       const bodyEl = element("body");
+      window.ALLOWED_COOKIE_PREFS = this.CUSTOM_FEATURES;
       _this.CUSTOM_FEATURES.forEach(feature => {
         const templates = allElements("[data-cookie-feature=" + feature + "]");
         templates.forEach(tpl => {
           const clone = tpl.content.cloneNode(true);
           bodyEl.appendChild(clone);
-        })
+        });
       });
     }
   }
