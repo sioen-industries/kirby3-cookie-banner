@@ -154,7 +154,11 @@ var cookiebanner = function() {
     activateScripts() {
       const _this = this;
       const bodyEl = element("body");
+
       window.ALLOWED_COOKIE_PREFS = this.CUSTOM_FEATURES;
+      const event = new CustomEvent('consent-change', {detail: { consent: this.CUSTOM_FEATURES }});
+      document.dispatchEvent(event);
+
       _this.CUSTOM_FEATURES.forEach(feature => {
         const templates = allElements("[data-cookie-feature=" + feature + "]");
         templates.forEach(tpl => {
